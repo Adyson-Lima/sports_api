@@ -28,7 +28,7 @@ RSpec.describe Sport, type: :model do
 
     it 'sport invalido com campos obrigatorios não preenchidos?' do
       sport = Sport.new
-      expect(sport).to be_valid
+      expect(sport).to be_invalid
     end
 
   end
