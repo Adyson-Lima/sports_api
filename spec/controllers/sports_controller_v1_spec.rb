@@ -12,4 +12,12 @@ RSpec.describe Api::V1::SportsController, type: :controller do
     end
   end
 
+  describe 'GET /api/v1/sports/id' do
+    it 'Consegue listar um sport especifico e retornar status 200?' do
+      get :show, params: {id: @sport.id}
+      expect(response.body).to include_json(id: @sport.id)
+      expect(response).to have_http_status(200)
+    end
+  end
+
 end
