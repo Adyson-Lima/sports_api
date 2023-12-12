@@ -37,4 +37,13 @@ RSpec.describe Api::V1::SportsController, type: :controller do
     end
   end
 
+  describe 'DELETE /api/v1/sports/id' do
+    it 'Consegue excluir um sport e retornar status 204?' do
+      sport = Sport.last
+      delete :destroy, params: {id: sport.id}
+      expect(Sport.all).not_to include(sport)
+      expect(response).to have_http_status(204)
+    end
+  end
+
 end
