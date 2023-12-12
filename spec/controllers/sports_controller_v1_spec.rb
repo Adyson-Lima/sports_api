@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Api::V1::SportsController, type: :controller do
 
-  before(@sport = Sport.create(name: 'voley', description: 'jogo com disputa atraves de uma rede'))
+  before{@sport = Sport.create(name: 'voley', description: 'jogo com disputa atraves de uma rede')}
 
   describe 'GET /api/v1/sports' do
     it 'Consegue listar todos os sports e retornar status 200?' do
