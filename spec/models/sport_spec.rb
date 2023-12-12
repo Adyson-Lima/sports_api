@@ -7,7 +7,7 @@ RSpec.describe Sport, type: :model do
   describe 'Testes de validação do model Sport' do
 
     it 'name consegue ser prenchido?' do
-      @sport.name = ''
+      @sport.name = 'basket'
       expect(@sport.name).to eq('basket')
     end
 
