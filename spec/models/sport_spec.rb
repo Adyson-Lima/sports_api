@@ -11,6 +11,11 @@ RSpec.describe Sport, type: :model do
       expect(@sport.name).to eq('basket')
     end
 
+    it 'description consegue ser preenchido?' do
+      @sport.description = ''
+      expect(@sport.description).to eq('esporte famoso no EUA')
+    end
+
   end
 
 end
