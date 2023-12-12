@@ -28,4 +28,13 @@ RSpec.describe Api::V1::SportsController, type: :controller do
     end
   end
 
+  describe 'PATCH /api/v1/sports/id' do
+    it 'Consegue atualizar um sport e retornar status 200?' do
+      sport = Sport.last
+      patch :update, params: {sport: {name: 'baseball', description: 'sport famoso no EUA'}, id: sport.id}
+      expect(response.body).to include_json(name: 'baseball')
+      expect(response).to have_http_status(200)
+    end
+  end
+
 end
