@@ -20,4 +20,12 @@ RSpec.describe Api::V1::SportsController, type: :controller do
     end
   end
 
+  describe 'POST /api/v1/sports' do
+    it 'Consegue criar um sport e retornar status 201?' do
+      post :create, params: {sport: {name: 'futsal', description: 'futbol de salão'}, format: :json}
+      expect(response.body).to include_json(name: 'futsal')
+      expect(response).to have_http_status(201)
+    end
+  end
+
 end
