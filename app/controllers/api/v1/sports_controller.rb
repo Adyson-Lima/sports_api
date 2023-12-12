@@ -1,6 +1,6 @@
 class Api::V1::SportsController < ApplicationController
 
-  before_action :set_sport, only: %i[show update] # show update destroy
+  before_action :set_sport, only: %i[show update destroy] # show update destroy
 
   def index
     @sports = Sport.all 
@@ -26,6 +26,10 @@ class Api::V1::SportsController < ApplicationController
     else
       render json: @sport.errors, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @sport.destroy!
   end
 
 private
