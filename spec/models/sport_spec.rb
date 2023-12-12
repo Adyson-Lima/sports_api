@@ -21,8 +21,8 @@ RSpec.describe Sport, type: :model do
   describe 'Testes de validação do model Sport' do
 
     it 'sport valido com campos obrigatorios preenchidos?' do
-      @sport.name = ''
-      @sport.description = ''
+      @sport.name = 'football'
+      @sport.description = 'jogo famoso no Brasil'
       expect(@sport).to be_valid
     end
 
