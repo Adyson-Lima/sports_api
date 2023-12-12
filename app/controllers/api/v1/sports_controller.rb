@@ -1,10 +1,14 @@
 class Api::V1::SportsController < ApplicationController
 
-  #before_action :set_sport, only: %i[] # show update destroy
+  before_action :set_sport, only: %i[show] # show update destroy
 
   def index
     @sports = Sport.all 
     render json: @sports
+  end
+
+  def show
+    render json: @sport
   end
 
 private
